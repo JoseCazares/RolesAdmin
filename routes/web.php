@@ -15,11 +15,6 @@ use FastRoute\Route;
 |
 */
 
-
-$router->get('/', function() use ($router){
-    return $router->app->version();
-});
-
 //Lista todos los roles existentes
 $router->get('/roles', 'RolesController@index');
 

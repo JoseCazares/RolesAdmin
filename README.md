@@ -1,24 +1,45 @@
-# Lumen PHP Framework
+# Examen práctico para backend (LARAVEL)
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
 [![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Se requiere un administrador de los roles de un sistema, este sistema tendrá diferentes permisos por rol
 
-## Official Documentation
+## ¿Qué podemos hacer? 
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+- Roles
+    - Insertar un nuevo rol
+    - Listar todos los roles existentes
+    - Listar los permisos de un rol
+    - Mostrar la informacion de un rol especifico
+    - Actualizar la informacion de un rol 
+    - Eliminar un rol (esto eliminará tambien sus permisos)
 
-## Contributing
+- Permisos de los roles
+    - Agregar un permiso a un rol
+    - Agregar muchos permisos a un rol 
+    - Eliminar un permiso a un rol
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Permisos
+    - Crear un nuevo permiso
+    - Mostrar la informacion de un permiso 
+    - Actualizar la informacion de un permiso
+    - Eliminar un permiso
 
-## Security Vulnerabilities
+## Base de datos
+La base de datos está manejada por el sistema gestor de base de datos mysql
+Contiene 3 tablas: 
+- rols
+- permisos
+- permisos_de_roles
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+**Y otras generadas por el propio laravel como se puede observar en el siguiente esquema:** 
+![Diagrama de la base de datos](/comgit/img/diagrama.png)
 
-## License
+## **Peticiones / test**
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Permisos
+
+![Todas las peticiones para los **permisos**](/assets/img/peticiones_permisos.png)
+
+-- Listar todos los permisos posibles **Method:** get
+![Listar todos los permisos posibles](/assets/img/permisos_posibles.png)
