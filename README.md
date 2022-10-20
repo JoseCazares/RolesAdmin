@@ -42,5 +42,36 @@ Contiene 3 tablas:
 ![Todas las peticiones para los **permisos**](/comgit/img/peticiones_permisos.png)
 
 -- Listar todos los permisos posibles **Method:** get
+
+```
+  localhost:8001/permisos
+```
 ![Listar todos los permisos posibles](/comgit/img/permisos_posibles.png)
+
+-- Crear un nuevo permiso **Method:**  post
+
+
+```
+  localhost:8001/permisos
+```
+
+![Crear un nuevo permiso ](/comgit/img/crear_permiso.png)
+
+-- Actualizar un permiso**Method:**  put / patch
+
+```
+  localhost:8001/permisos/{id}
+```
+
+![Actualizar un permiso ](/comgit/img/actualizar_permiso.png)
+
+-- Eliminar un permiso**Method:**  delete
+
+```
+  localhost:8001/permisos/{id}
+```
+
+![Eliminar un permiso ](/comgit/img/permiso_eliminado.png)
+
+
 
