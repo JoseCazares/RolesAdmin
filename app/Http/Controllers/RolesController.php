@@ -40,7 +40,7 @@ class RolesController extends Controller
      * @param int $idRol
      * @return Illuminate\Http\Response
      */
-    public function show($idRol){
+    public function show($id){
 
     }
 
