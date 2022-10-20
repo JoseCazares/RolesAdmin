@@ -39,7 +39,8 @@ Contiene 3 tablas:
 
 ### Permisos
 
-![Todas las peticiones para los **permisos**](/assets/img/peticiones_permisos.png)
+![Todas las peticiones para los **permisos**](/comgit/img/peticiones_permisos.png)
 
 -- Listar todos los permisos posibles **Method:** get
-![Listar todos los permisos posibles](/assets/img/permisos_posibles.png)
+![Listar todos los permisos posibles](/comgit/img/permisos_posibles.png)
+
