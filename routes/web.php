@@ -23,6 +23,30 @@ $router->get('/', function() use ($router){
 //Lista todos los roles existentes
 $router->get('/roles', 'RolesController@index');
 
+
+/**
+ * Operaciones de permisos de los roles
+ */
+
+ //Lista los roles con todos sus permisos
+$router->get('/roles/{id}/permisos', 'PermisosDeRolController@index');
+
+//Agregar un permiso a un rol
+$router->post('/roles/permisos/{id}', 'PermisosDeRolController@store');
+
+//Asignar permisos masivos a un rol
+$router->post('/roles/permisos/bulk/{id}', 'PermisosDeRolController@bulkStore');
+
+//eliminar un permiso de un rol 
+$router->delete('/roles/permisos/', 'PermisosDeRolController@destroy');
+
+/**
+ * Fin de permisos de los roles
+ */
+
+/**
+ * Operaciones con roles
+ */
 //Crea un nuevo rol
 $router->post('/roles', 'RolesController@store');
 
@@ -56,3 +80,4 @@ $router->put('/permisos/{id}', 'PermisosController@update');
 $router->patch('/permisos/{id}', 'PermisosController@update');
 
 $router->delete('/permisos/{id}', 'PermisosController@destroy');
+
