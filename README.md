@@ -57,7 +57,7 @@ Contiene 3 tablas:
 
 ![Crear un nuevo permiso ](/comgit/img/crear_permiso.png)
 
--- Actualizar un permiso**Method:**  put / patch
+-- Actualizar un permiso **Method:**  put / patch
 
 ```
   localhost:8001/permisos/{id}
@@ -65,7 +65,7 @@ Contiene 3 tablas:
 
 ![Actualizar un permiso ](/comgit/img/actualizar_permiso.png)
 
--- Eliminar un permiso**Method:**  delete
+-- Eliminar un permiso **Method:**  delete
 
 ```
   localhost:8001/permisos/{id}
@@ -74,4 +74,54 @@ Contiene 3 tablas:
 ![Eliminar un permiso ](/comgit/img/permiso_eliminado.png)
 
 
+Si un permiso no existe al eliminar o actualizar nos lanza un error 404
 
+![Permiso no encontrado](/comgit/img/permiso_not_found.png)
+
+### Roles
+
+![Todas las peticiones para los **roles**](/comgit/img/peticiones_roles.png)
+
+-- Listar todos los roles posibles **Method:** get
+
+```
+  localhost:8001/roles
+```
+![Listar todos los roles posibles](/comgit/img/roles_posibles.png)
+
+-- Crear un nuevo rol **Method:**  post
+
+```
+  localhost:8001/roles
+```
+
+![Crear un nuevo rol](/comgit/img/crear_rol.png)
+
+Validacion de campos al crear un rol
+
+![Validacion de campos al crear un rol](/comgit/img/validacion_rol.png)
+
+-- Actualizar un rol **Method:**  put / patch
+
+```
+  localhost:8001/roles/{id}
+```
+Si no se modifica algún dato lanza un error
+
+![Si no se modifica algún dato lanza un error](/comgit/img/erro_no_update_data.png)
+
+Igualmente cuenta con validacion de campos
+
+![Validacion de campos al crear un rol](/comgit/img/validacion_rol.png)
+
+
+-- Eliminar un rol **Method:**  delete
+
+```
+  localhost:8001/roles/{id}
+```
+
+![Eliminar un rol ](/comgit/img/eliminar_rol.png)
+
+Si el rol no existe lanza un error 404
+![Permiso no encontrado](/comgit/img/permiso_not_found.png)
