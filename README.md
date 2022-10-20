@@ -149,7 +149,7 @@ Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Cont
 ![Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Content](/comgit/img/error422.png)
 
 De lo contrario nos devuelve un 200 ok
-![Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Content](/comgit/img/permiso_asignado_200.png.png)
+![Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Content](/comgit/img/permiso_asignado_200.png)
 
 
 ## Notas finales
