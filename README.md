@@ -37,7 +37,7 @@ Contiene 3 tablas:
 
 ## **Peticiones / test**
 
-### Permisos
+## Permisos
 
 ![Todas las peticiones para los **permisos**](/comgit/img/peticiones_permisos.png)
 
@@ -78,7 +78,7 @@ Si un permiso no existe al eliminar o actualizar nos lanza un error 404
 
 ![Permiso no encontrado](/comgit/img/permiso_not_found.png)
 
-### Roles
+## Roles
 
 ![Todas las peticiones para los **roles**](/comgit/img/peticiones_roles.png)
 
@@ -125,3 +125,33 @@ Igualmente cuenta con validacion de campos
 
 Si el rol no existe lanza un error 404
 ![Permiso no encontrado](/comgit/img/permiso_not_found.png)
+
+
+### Permisos de los roles
+
+![Todas las peticiones para los **permiso de los roles**](/comgit/img/posibles_permisos_de_rol.png)
+
+-- Listar permisos de rol **Method:** get
+
+```
+  localhost:8001/roles/{rol_id}/permisos
+```
+![Listar permisos de rol](/comgit/img/permisos_de_rol_a.png)
+
+-- Asignar permisos masivos para el rol **Method:**  post
+
+```
+  localhost:8001/roles/permisos/bulk/{rol_id}
+```
+
+Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Content
+
+![Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Content](/comgit/img/error422.png)
+
+De lo contrario nos devuelve un 200 ok
+![Si hay algun permiso que ya esté asignado lanza un error 422 Unprocessable Content](/comgit/img/permiso_asignado_200.png.png)
+
+
+## Notas finales
+
+**Al eliminar un permiso o un rol, automaticamente se borra su informacion asociada**
