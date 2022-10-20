@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use FastRoute\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -37,3 +39,20 @@ $router->patch('/roles/{id}', 'RolesController@update');
  * Es decir elimina el rol y sus permisos asignados
  */
  $router->delete('/roles/{id}', 'RolesController@destroy');
+
+
+ /**Routas para los permisos */
+//Lista todos los roles existentes
+$router->get('/permisos', 'PermisosController@index');
+
+//Crea un nuevo rol
+$router->post('/permisos', 'PermisosController@store');
+
+//Muestra la informacion de un rol en especifico
+$router->get('/permisos/{id}', 'PermisosController@show');
+
+//Actualiza la informacion del rol
+$router->put('/permisos/{id}', 'PermisosController@update');
+$router->patch('/permisos/{id}', 'PermisosController@update');
+
+$router->delete('/permisos/{id}', 'PermisosController@destroy');

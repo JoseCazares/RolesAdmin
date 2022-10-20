@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permiso;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PermisosController extends Controller
 {
+    use ApiResponser;
+
     /**
      * Create a new controller instance.
      *
@@ -22,6 +27,7 @@ class PermisosController extends Controller
      */
     public function index(){
 
+        return $this->successResponse(Permiso::all());
     }
 
 
@@ -31,17 +37,15 @@ class PermisosController extends Controller
      * @return Illuminate\Http\Response
      */
     public function store(Request $request ){
+        $rules = [
+            'Nombre' => 'required|max:30'
+        ];
 
-    }
+        $this->validate($request, $rules);
 
+        $permiso = Permiso::create($request->all());
 
-    /**
-     * Retorna un permiso en especifico
-     * @param int $idPermiso
-     * @return Illuminate\Http\Response
-     */
-    public function show($idPermiso){
-
+        return $this->successResponse($permiso, Response::HTTP_CREATED);
     }
 
     /**
@@ -49,8 +53,24 @@ class PermisosController extends Controller
      * @param int $idPermiso
      * @return Illuminate\Http\Response
      */
-    public function update(Request $request, $idpermiso){
+    public function update(Request $request, $id){
+        $rules = [
+            'Nombre' => 'required|max:30'
+        ];
 
+        $this->validate($request, $rules);
+
+        $permiso = Permiso::findOrFail($id);
+
+        $permiso->fill($request->all());
+
+        if($permiso->isClean()){
+            return $this->errorResponse('Al menos un valor debe ser modificado', Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $permiso->save();
+
+        return $this->successResponse($permiso);
     }
 
 
@@ -60,7 +80,12 @@ class PermisosController extends Controller
      * @return Illuminate\Http\Response
      */
 
-     public function destroy($idPermiso){
+     public function destroy($id){
+        $rol = Permiso::where('Id', $id)->firstOrFail();
+
+        $rol->destroy($id);
+
+        return $this->customResponse('Permiso eliminado correctamente', Response::HTTP_GONE);
 
      }
     
